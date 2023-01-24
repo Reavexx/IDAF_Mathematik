@@ -11,7 +11,10 @@ def calculate():
     result_label.config(text=f"x1 = {x1}\nx2 = {x2}")
 
 root = tk.Tk()
-root.title("Mitternachtsformel")
+root.title("Mitternachtsformel made by Dines Nimalthas")
+
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
 
 a_label = tk.Label(root, text="a:")
 a_label.grid(row=0, column=0)
