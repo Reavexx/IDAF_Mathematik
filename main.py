@@ -1,5 +1,6 @@
 import tkinter as tk
 
+# Formula for Midnight
 def calculate():
     a = float(a_entry.get())
     b = float(b_entry.get())
@@ -13,9 +14,11 @@ def calculate():
     else:
         result_label.config(text=f"x1 = {x1}\nx2 = {x2}")
 
+# GUI
+
 root = tk.Tk()
 root.title("Mitternachtsformel Berechner made by Dines Nimalthas")
-root.config(bg='#A67449')
+root.config(bg='#0074FF')
 
 a_label = tk.Label(root, text="a:")
 a_label.grid(row=0, column=0)
