@@ -1,5 +1,6 @@
 # Calculator
 import tkinter as tk
+from tkinter import messagebox
 
 # Formula for Midnight
 def calculate():
@@ -12,38 +13,44 @@ def calculate():
     diskriminate = b**2 - 4*a*c
 
     if(x1 == x2):
-        result_label.config(text=f"x = {x1}\nDoppellössung")
+        result_label.config(text=f"x = {x1}\nDoppellösung")
+        messagebox.showinfo("Lösung?", "Doppellösung")
     elif (diskriminate < 0):
         result_label.config(text=f"Keine lösung")
+        messagebox.showinfo("Lösung?", "Keine Lösung")
     elif (x1 != x2):
         result_label.config(text=f"x1 = {x1}\nx2 = {x2}")
 
 root = tk.Tk()
-root.title("Mitternachtsformel Berechner made by Dines Nimalthas")
-root.config(bg='#A67449')
+root.title("Mitternachtsformel Berechner")
+
+
+
+Title_label = tk.Label(root, text="Mitternachtsformel Berechner")
+Title_label.pack(side="top")
 
 a_label = tk.Label(root, text="a:")
-a_label.grid(row=0, column=0)
+a_label.pack(side="left", padx= 15, pady=15)
 
 a_entry = tk.Entry(root)
-a_entry.grid(row=0, column=1)
+a_entry.pack(side="left", padx= 15, pady=15)
 
 b_label = tk.Label(root, text="b:")
-b_label.grid(row=1, column=0)
+b_label.pack(side="left", padx= 15, pady=15)
 
 b_entry = tk.Entry(root)
-b_entry.grid(row=1, column=1)
+b_entry.pack(side="left", padx= 15, pady=15)
 
 c_label = tk.Label(root, text="c:")
-c_label.grid(row=2, column=0)
+c_label.pack(side="left", padx= 15, pady=15)
 
 c_entry = tk.Entry(root)
-c_entry.grid(row=2, column=1)
+c_entry.pack(side="left", padx= 15, pady=15)
 
 calculate_button = tk.Button(root, text="Berechnen", command=calculate)
-calculate_button.grid(row=3, column=0, columnspan=2)
+calculate_button.pack(side="left", padx= 15, pady=15)
 
 result_label = tk.Label(root)
-result_label.grid(row=4, column=0, columnspan=2)
+result_label.pack(side="left")
 
 root.mainloop()
