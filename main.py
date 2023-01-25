@@ -7,15 +7,20 @@ def calculate():
 
     x1 = (-b + (b**2 - 4*a*c)**0.5) / (2*a)
     x2 = (-b - (b**2 - 4*a*c)**0.5) / (2*a)
+    diskriminate = b**2 - 4*a*c
 
-    if (x1 == x2):
-        result_label.config(text=f"x = {x1}")
-    else:
+    if(x1 == x2):
+        result_label.config(text=f"x = {x1}\nDoppellössung")
+    elif (diskriminate < 0):
+        result_label.config(text=f"Keine lösung")
+    elif (x1 != x2):
         result_label.config(text=f"x1 = {x1}\nx2 = {x2}")
+
+    
+
 
 root = tk.Tk()
 root.title("Mitternachtsformel Berechner made by Dines Nimalthas")
-root.config(bg='#A67449')
 
 a_label = tk.Label(root, text="a:")
 a_label.grid(row=0, column=0)
